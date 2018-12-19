@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,10 +55,27 @@ namespace WPF_OpenCV_triangle_recognition
         private void Btn_check_Click(object sender, RoutedEventArgs e)
         {
             Mat src = new Mat(@"K:\REPO2018\WPF_OpenCV_triangle_recognition\test-image.png", ImreadModes.Color);
+            ///ścieżka na sztywno, docelowo pobierana pickerem
+
             Mat dst = new Mat();
             Mat dstRedPointed = new Mat();
 
             Cv2.Canny(src, dst, 50, 200);
+
+
+            /// Canny zwraca obraz binarny z konurami figur
+            /// następnymi krokami będą:
+            /// - w debagu naliczyło 55 figur z różną liczbą rogów (często kilkadziesiąt)
+            /// 3. W ten sposób otrzymamy tablicę z figurami i współrzędnymi rogów - wybieramy trójkąty i liczymy środki trójkątów
+            /// 4. Wracamy do kolorowago obrazu i pobieramy kolor ze środka obrazu
+            /// - mamy 3 tablice kolorów RGB, z tablicy zielonej wybieramy środek figury i sprawdzamy głębię - próg np. 50% natężenia
+            /// - z pozostałych tablic próg natężenia nie większy niż np. ok 5%
+            /// 5. Pozostają zielone trójkąty.
+            /// 6. Obrysowujemy je okręgami
+
+
+
+
             List<Point2f> point2Fs = new List<Point2f>();
             //Cv2.CornerSubPix(dst, point2Fs, new Size(), Size.Zero, TermCriteria.Both(500, 0.1d));
             dstRedPointed = dst;
