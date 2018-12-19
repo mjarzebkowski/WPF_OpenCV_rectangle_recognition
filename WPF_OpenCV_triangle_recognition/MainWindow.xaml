@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_OpenCV_triangle_recognition"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="769.928" Width="790.305">
+    <Grid Margin="2">
+        <Grid HorizontalAlignment="Left" Height="715" Margin="10,10,0,0" VerticalAlignment="Top" Width="758">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="642*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btn_check" Content="Button" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="75" Click="Btn_check_Click"/>
+            <Image x:Name="im_baseImage" HorizontalAlignment="Left" Margin="10,85,0,10" Width="738"/>
+            <Label x:Name="label_InputFileSelector" Content="Input file path" HorizontalAlignment="Left" Margin="90,7,0,0" VerticalAlignment="Top" Width="664"/>
+            <Label x:Name="label_OutputFileSelector" Content="Output file path" HorizontalAlignment="Left" Margin="90,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.25,0.387" Width="672"/>
+            <Button x:Name="btn_InputFileSelector" Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Btn_InputFileSelector_Click"/>
+            <Button x:Name="btn_OutputFileSelector" Content="Button" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="75" Click="Btn_OutputFileSelector_Click"/>
+        </Grid>
+
     </Grid>
 </Window>

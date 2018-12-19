@@ -12,17 +12,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OpenCvSharp;
 
 namespace WPF_OpenCV_triangle_recognition
 {
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : System.Windows.Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Btn_check_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_OutputFileSelector_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_InputFileSelector_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
